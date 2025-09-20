@@ -1,7 +1,10 @@
-cat > .github/workflows/ci.yml <<'YAML'
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -14,21 +17,14 @@ jobs:
       - name: Setup Node.js (v18)
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '18'
           cache: 'npm'
 
       - name: Install dependencies
-        # lockfile がある前提で高速・再現性の高いインストール
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm i
-          fi
+        run: npm ci
 
       - name: Run lint
         run: npm run lint --if-present
 
       - name: Run build
         run: npm run build
-YAML
