@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "暗号資産ウォレットアプリ",
+    "description": "暗号資産を安全に管理するミニマル設計のウォレットアプリ。暗号化技術とNext.jsを活用し、ユーザーフレンドリーなインターフェースを実現。セキュリティと使いやすさの両立を追求したプロダクト。",
+    "images": [
+      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
+    ],
+    "technologies": ["Next.js", "TypeScript", "Tailwind", "Crypto"],
+    "url": "#",
+    "demoUrl": "#",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "AI専用深夜フルリモート求人サイト",
+    "description": "深夜リモートワークに特化したAIエンジニア専用求人プラットフォーム。匿名ログインとAI推薦機能搭載。働き方の多様性を支援し、優秀な人材と企業をマッチングする革新的なサービス。",
+    "images": [
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center"
+    ],
+    "technologies": ["Next.js", "Tailwind", "AI", "JobPlatform"],
+    "url": "#",
+    "demoUrl": "#",
+    "featured": true
+  }
+]
