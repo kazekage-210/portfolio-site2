@@ -80,8 +80,17 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-5xl md:text-6xl font-light text-[#f5f5f5] mb-8 tracking-tight"
         >
-          no name
+          blue
         </motion.h1>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mb-8"
+        >
+          <p className="text-sm text-[#a1a1aa] font-light">※テスト公開用サイト</p>
+        </motion.div>
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -90,7 +99,7 @@ const Hero = () => {
           className="max-w-4xl mx-auto mb-16"
         >
           <p className="text-xl md:text-2xl text-[#a1a1aa] leading-relaxed mb-8 font-light">
-            匿名のエンジニアとして、デジタルの余白に新しい価値を描いています。
+            AIとの共生に新しい価値を描いています。
           </p>
           <p className="text-lg md:text-xl text-[#a1a1aa] leading-relaxed font-light">
             暗号資産からAI、フルリモートの未来まで──技術と創造力を重ね、<br />
