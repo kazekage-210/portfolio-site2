@@ -184,8 +184,8 @@ export function hasPermission(user: AdminUser, action: string): boolean {
 }
 
 // 管理画面のルート保護
-export function requireAuth(Component: React.ComponentType) {
-  return function AuthenticatedComponent(props: any) {
+export function requireAuth<T extends Record<string, unknown>>(Component: React.ComponentType<T>) {
+  return function AuthenticatedComponent(props: T) {
     const auth = AdminAuth.getInstance();
     
     if (!auth.isLoggedIn()) {
