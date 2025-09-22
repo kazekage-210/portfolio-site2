@@ -54,14 +54,14 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-[#3b82f6]/20 rounded-full animate-pulse delay-3000"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 pt-28 md:pt-36">
+      <div className="max-w-7xl mx-auto relative z-10 pt-28 md:pt-36 px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center md:items-center gap-12 md:gap-16">
           {/* 左エリア: プロフィール画像 (30-35%) */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-shrink-0 w-full md:w-[35%] flex justify-center md:justify-start"
+            className="flex-shrink-0 w-full md:w-[35%] flex justify-center md:justify-start pl-8 md:pl-16"
           >
             <div className="relative">
               {/* 外側のブルーグロー - 画像サイズに合わせて拡大 */}
