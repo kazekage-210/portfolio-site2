@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { PROFILE } from '@/config/profile';
 
 const Hero = () => {
   // SNSリンクの設定（ここを書き換えればOK）
@@ -53,14 +54,15 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-[#3b82f6]/20 rounded-full animate-pulse delay-3000"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto text-center relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-[220px_1fr] gap-10 pt-28 md:pt-36">
+        {/* 左カラム: アイコン */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-16"
+          className="flex justify-center md:justify-start"
         >
-          <div className="relative w-48 h-48 mx-auto mb-12">
+          <div className="relative w-48 h-48">
             {/* 外側の光るリング */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6] to-[#1e40af] rounded-full blur-2xl opacity-20 animate-pulse"></div>
             {/* メインのプロフィール画像 */}
@@ -73,65 +75,58 @@ const Hero = () => {
             </div>
           </div>
         </motion.div>
-        
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-6xl font-light text-[#f5f5f5] mb-8 tracking-tight"
-        >
-          blue
-        </motion.h1>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mb-8"
-        >
-          <p className="text-sm text-[#a1a1aa] font-light">※テスト公開用サイト</p>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-4xl mx-auto mb-16"
-        >
-          <p className="text-xl md:text-2xl text-[#a1a1aa] leading-relaxed mb-8 font-light">
-            AIとの共生に新しい価値を描いています。
-          </p>
-          <p className="text-lg md:text-xl text-[#a1a1aa] leading-relaxed font-light">
-            暗号資産からAI、フルリモートの未来まで──技術と創造力を重ね、<br />
-            世界と静かにつながるプロジェクトを届けています。
-          </p>
-        </motion.div>
 
-        {/* SNSボタン */}
+        {/* 右カラム: プロフィール情報 */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-center space-x-6"
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col justify-center"
         >
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="group flex items-center justify-center w-12 h-12 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-full hover:border-[#3b82f6]/50 transition-all duration-300"
-            >
-              <div className="text-[#a1a1aa] group-hover:text-[#3b82f6] transition-colors duration-300">
-                {social.icon}
-              </div>
-            </motion.a>
-          ))}
+          <h1 className="text-4xl md:text-5xl font-light text-[#f5f5f5] mb-4 tracking-tight">
+            Profile
+          </h1>
+          
+          <h2 className="text-3xl md:text-4xl font-light text-[#3b82f6] mb-4 tracking-tight">
+            {PROFILE.name}
+          </h2>
+          
+          <div className="mb-6">
+            <p className="text-sm text-[#a1a1aa] font-light">{PROFILE.note}</p>
+          </div>
+          
+          <div className="mb-8">
+            <p className="text-lg md:text-xl text-[#a1a1aa] leading-relaxed font-light whitespace-pre-line">
+              {PROFILE.bio}
+            </p>
+          </div>
+
+          {/* SNSボタン */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex space-x-6"
+          >
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="group flex items-center justify-center w-12 h-12 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-full hover:border-[#3b82f6]/50 transition-all duration-300"
+              >
+                <div className="text-[#a1a1aa] group-hover:text-[#3b82f6] transition-colors duration-300">
+                  {social.icon}
+                </div>
+              </motion.a>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>
