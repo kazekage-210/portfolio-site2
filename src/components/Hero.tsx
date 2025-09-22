@@ -54,80 +54,87 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-[#3b82f6]/20 rounded-full animate-pulse delay-3000"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-[220px_1fr] gap-10 pt-28 md:pt-36">
-        {/* 左カラム: アイコン */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center md:justify-start"
-        >
-          <div className="relative w-48 h-48">
-            {/* 外側の光るリング */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6] to-[#1e40af] rounded-full blur-2xl opacity-20 animate-pulse"></div>
-            {/* メインのプロフィール画像 */}
-            <div className="relative w-48 h-48 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-full flex items-center justify-center border border-gray-700/30 shadow-2xl backdrop-blur-sm">
-              <div className="w-40 h-40 bg-gradient-to-br from-[#3b82f6] to-[#1e40af] rounded-full flex items-center justify-center shadow-inner">
-                <svg className="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>
+      <div className="max-w-7xl mx-auto relative z-10 pt-28 md:pt-36">
+        <div className="flex flex-col md:flex-row items-center md:items-center gap-12 md:gap-16">
+          {/* 左エリア: プロフィール画像 (30-35%) */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex-shrink-0 w-full md:w-[35%] flex justify-center md:justify-start"
+          >
+            <div className="relative">
+              {/* 外側のブルーグロー - 画像サイズに合わせて拡大 */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6]/25 to-[#1e40af]/15 blur-2xl opacity-50 animate-pulse"></div>
+              {/* 画像コンテナ - 2倍サイズに拡大 */}
+              <div className="relative w-80 h-80 bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-2 border-[#3b82f6]/40 shadow-2xl backdrop-blur-sm">
+                <img 
+                  src="/user-profile1.jpg" 
+                  alt="Profile" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
-          </div>
-        </motion.div>
-
-        {/* 右カラム: プロフィール情報 */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col justify-center"
-        >
-          <h1 className="text-4xl md:text-5xl font-light text-[#f5f5f5] mb-4 tracking-tight">
-            Profile
-          </h1>
-          
-          <h2 className="text-3xl md:text-4xl font-light text-[#3b82f6] mb-4 tracking-tight">
-            {PROFILE.name}
-          </h2>
-          
-          <div className="mb-6">
-            <p className="text-sm text-[#a1a1aa] font-light">{PROFILE.note}</p>
-          </div>
-          
-          <div className="mb-8">
-            <p className="text-lg md:text-xl text-[#a1a1aa] leading-relaxed font-light whitespace-pre-line">
-              {PROFILE.bio}
-            </p>
-          </div>
-
-          {/* SNSボタン */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex space-x-6"
-          >
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="group flex items-center justify-center w-12 h-12 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-full hover:border-[#3b82f6]/50 transition-all duration-300"
-              >
-                <div className="text-[#a1a1aa] group-hover:text-[#3b82f6] transition-colors duration-300">
-                  {social.icon}
-                </div>
-              </motion.a>
-            ))}
           </motion.div>
-        </motion.div>
+
+          {/* 仕切り線（デスクトップのみ） - 画像サイズに合わせて調整 */}
+          <div className="hidden md:block w-px h-48 bg-gradient-to-b from-transparent via-[#3b82f6]/20 to-transparent"></div>
+
+          {/* 右エリア: プロフィール情報 (65-70%) */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex-1 w-full md:w-[65%] flex flex-col justify-center text-center md:text-left"
+          >
+            <h1 className="text-4xl md:text-5xl font-light text-[#f5f5f5] mb-6 tracking-wide leading-tight">
+              Profile
+            </h1>
+            
+            <h2 className="text-3xl md:text-4xl font-light text-[#3b82f6] mb-6 tracking-wide leading-tight">
+              {PROFILE.name}
+            </h2>
+            
+            <div className="mb-8">
+              <p className="text-sm text-[#a1a1aa] font-light tracking-wide leading-relaxed">
+                {PROFILE.note}
+              </p>
+            </div>
+            
+            <div className="mb-10">
+              <p className="text-lg md:text-xl text-[#a1a1aa] leading-loose font-light tracking-wide whitespace-pre-line">
+                {PROFILE.bio}
+              </p>
+            </div>
+
+            {/* SNSボタン */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex justify-center md:justify-start space-x-6"
+            >
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group flex items-center justify-center w-12 h-12 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-full hover:border-[#3b82f6]/50 transition-all duration-300"
+                >
+                  <div className="text-[#a1a1aa] group-hover:text-[#3b82f6] transition-colors duration-300">
+                    {social.icon}
+                  </div>
+                </motion.a>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
