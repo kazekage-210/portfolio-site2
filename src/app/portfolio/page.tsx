@@ -1,16 +1,16 @@
-// Works一覧ページ
-// 将来10〜100件のWorks掲載に耐える設計
-import { WORKS, Work } from '@/data/works';
+// Portfolio一覧ページ
+// 将来10〜100件のPortfolio掲載に耐える設計
+import { PORTFOLIO, Work } from '@/data/portfolio';
 import Link from 'next/link';
 
-export default function WorksPage() {
+export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-gray-900 pt-24 md:pt-32">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* ヘッダー */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-light text-[#f5f5f5] mb-4">
-            Works
+            Portfolio
           </h1>
           <p className="text-lg text-[#a1a1aa] max-w-2xl mx-auto">
             これまでに手がけたプロジェクトや作品を紹介しています。
@@ -33,13 +33,13 @@ export default function WorksPage() {
             </select>
           </div>
           <div className="text-sm text-[#a1a1aa]">
-            {WORKS.length}件の作品
+            {PORTFOLIO.length}件の作品
           </div>
         </div>
 
-        {/* Worksグリッド */}
+        {/* Portfolioグリッド */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {WORKS.map((work) => (
+          {PORTFOLIO.map((work) => (
             <WorkCard key={work.id} work={work} />
           ))}
         </div>
