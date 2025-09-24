@@ -32,42 +32,45 @@ const Header = () => {
             <span className="text-lg font-medium">Team Next</span>
           </motion.button>
           
-          <nav className="flex items-center space-x-8">
-            <motion.button
-              onClick={() => scrollToSection('hero')}
-              className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Home
-            </motion.button>
-            <Link href="/member">
-              <motion.button
-                className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Member
-              </motion.button>
-            </Link>
-            <Link href="/portfolio">
-              <motion.button
-                className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Portfolio
-              </motion.button>
-            </Link>
-            <motion.button
-              onClick={() => scrollToSection('contact')}
-              className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Contact
-            </motion.button>
-          </nav>
+                 <div className="flex items-center space-x-8">
+                   <nav className="flex items-center space-x-8">
+                     <motion.button
+                       onClick={() => scrollToSection('hero')}
+                       className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+                       whileHover={{ scale: 1.02 }}
+                       whileTap={{ scale: 0.98 }}
+                     >
+                       Home
+                     </motion.button>
+                     <Link href="/member">
+                       <motion.button
+                         className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+                         whileHover={{ scale: 1.02 }}
+                         whileTap={{ scale: 0.98 }}
+                       >
+                         Member
+                       </motion.button>
+                     </Link>
+                     <Link href="/portfolio">
+                       <motion.button
+                         className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+                         whileHover={{ scale: 1.02 }}
+                         whileTap={{ scale: 0.98 }}
+                       >
+                         Portfolio
+                       </motion.button>
+                     </Link>
+                     <motion.button
+                       onClick={() => scrollToSection('contact')}
+                       className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+                       whileHover={{ scale: 1.02 }}
+                       whileTap={{ scale: 0.98 }}
+                     >
+                       Contact
+                     </motion.button>
+                   </nav>
+                   
+                 </div>
         </div>
       </div>
     </motion.header>
