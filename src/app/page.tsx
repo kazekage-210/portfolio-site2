@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import Works from '@/components/Works';
+import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
       <main className="relative">
         <Hero />
-        <Works />
+        <Portfolio />
         <Contact />
       </main>
     </div>

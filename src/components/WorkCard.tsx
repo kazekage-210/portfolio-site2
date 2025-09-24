@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Work } from '@/data/worksData';
+import { Work } from '@/data/portfolioData';
 
 interface WorkCardProps {
   work: Work;

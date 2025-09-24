@@ -2,13 +2,13 @@
 
 import { motion } from 'framer-motion';
 import WorkCard from './WorkCard';
-import { worksData, getFeaturedWorks } from '@/data/worksData';
+import { portfolioData, getFeaturedPortfolio } from '@/data/portfolioData';
 
-const Works = () => {
-  const featuredWorks = getFeaturedWorks();
+const Portfolio = () => {
+  const featuredWorks = getFeaturedPortfolio();
 
   return (
-    <section id="works" className="py-32 px-6 relative">
+    <section id="portfolio" className="py-32 px-6 relative">
       {/* 背景装飾 */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#3b82f6]/5 rounded-full blur-3xl"></div>
@@ -38,14 +38,14 @@ const Works = () => {
           </motion.div>
           
           <h2 className="text-4xl md:text-5xl font-light text-[#f5f5f5] mb-6 tracking-tight">
-            Works
+            Portfolio
           </h2>
           <p className="text-lg text-[#a1a1aa] max-w-2xl mx-auto leading-relaxed font-light">
             技術と創造力を重ね、世界と静かにつながるプロジェクトを届けています
           </p>
         </motion.div>
         
-        {worksData.length === 0 ? (
+        {portfolioData.length === 0 ? (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,14 +62,14 @@ const Works = () => {
           </motion.div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {worksData.map((work, index) => (
+            {portfolioData.map((work, index) => (
               <WorkCard key={work.id} work={work} index={index} />
             ))}
           </div>
         )}
 
         {/* 追加の作品を見るボタン（将来の拡張用） */}
-        {worksData.length > 0 && (
+        {portfolioData.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,5 +91,4 @@ const Works = () => {
   );
 };
 
-export default Works;
-
+export default Portfolio;

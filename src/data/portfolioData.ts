@@ -17,7 +17,7 @@ export interface Work {
 }
 
 // 作品データの配列（ここに新しい作品を追加すればOK）
-export const worksData: Work[] = [
+export const portfolioData: Work[] = [
   {
     id: 1,
     title: "暗号資産ウォレットアプリ",
@@ -87,32 +87,40 @@ export const worksData: Work[] = [
 ];
 
 // カテゴリー別の作品取得
-export function getWorksByCategory(category: string): Work[] {
-  return worksData.filter(work => work.category === category);
+export function getPortfolioByCategory(category: string): Work[] {
+  return portfolioData.filter(work => work.category === category);
 }
 
 // 注目作品の取得
-export function getFeaturedWorks(): Work[] {
-  return worksData.filter(work => work.featured);
+export function getFeaturedPortfolio(): Work[] {
+  return portfolioData.filter(work => work.featured);
 }
 
 // 最新作品の取得
-export function getLatestWorks(limit: number = 3): Work[] {
-  return worksData
+export function getLatestPortfolio(limit: number = 3): Work[] {
+  return portfolioData
     .sort((a, b) => (b.year || 0) - (a.year || 0))
     .slice(0, limit);
 }
 
 // 作品IDによる取得
-export function getWorkById(id: number): Work | undefined {
-  return worksData.find(work => work.id === id);
+export function getPortfolioById(id: number): Work | undefined {
+  return portfolioData.find(work => work.id === id);
 }
 
 // 技術スタック別の作品取得
-export function getWorksByTechnology(technology: string): Work[] {
-  return worksData.filter(work => 
+export function getPortfolioByTechnology(technology: string): Work[] {
+  return portfolioData.filter(work => 
     work.technologies.some(tech => 
       tech.toLowerCase().includes(technology.toLowerCase())
     )
   );
 }
+
+// 後方互換性のためのエイリアス（段階的移行用）
+export const worksData = portfolioData;
+export const getWorksByCategory = getPortfolioByCategory;
+export const getFeaturedWorks = getFeaturedPortfolio;
+export const getLatestWorks = getLatestPortfolio;
+export const getWorkById = getPortfolioById;
+export const getWorksByTechnology = getPortfolioByTechnology;

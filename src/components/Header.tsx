@@ -28,17 +28,33 @@ const Header = () => {
             <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
               <div className="w-6 h-6 bg-[#3b82f6] rounded-full"></div>
             </div>
-            <span className="text-lg font-medium">Profile</span>
+            <span className="text-lg font-medium">Team Next</span>
           </motion.button>
           
           <nav className="flex items-center space-x-8">
             <motion.button
-              onClick={() => scrollToSection('works')}
+              onClick={() => scrollToSection('hero')}
               className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Works
+              Home
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('member')}
+              className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Member
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('portfolio')}
+              className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Portfolio
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('contact')}
