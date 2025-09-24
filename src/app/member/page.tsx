@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-export default function PortfolioPage() {
+export default function MemberPage() {
   const handleGoBack = () => {
     if (typeof window !== 'undefined') {
       window.history.back();
@@ -32,7 +32,7 @@ export default function PortfolioPage() {
           </motion.div>
           
           <h1 className="text-4xl md:text-5xl font-light text-[#f5f5f5] mb-6 tracking-tight">
-            Portfolio
+            Member
           </h1>
           <p className="text-lg text-[#a1a1aa] max-w-2xl mx-auto leading-relaxed font-light">
             このページは現在準備中です
@@ -53,7 +53,7 @@ export default function PortfolioPage() {
             工事中
           </h2>
           <p className="text-lg text-[#a1a1aa] max-w-xl mx-auto leading-relaxed">
-            ポートフォリオ一覧ページを準備中です。<br />
+            チームメンバーの紹介ページを準備中です。<br />
             もうしばらくお待ちください。
           </p>
         </motion.div>
