@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import WorkCard from './WorkCard';
 import { portfolioData, getFeaturedPortfolio } from '@/data/portfolioData';
 
@@ -61,15 +62,15 @@ const Portfolio = () => {
             <p className="text-lg text-[#a1a1aa]">まだ制作物はありません</p>
           </motion.div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {portfolioData.map((work, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {portfolioData.slice(0, 6).map((work, index) => (
               <WorkCard key={work.id} work={work} index={index} />
             ))}
           </div>
         )}
 
-        {/* 追加の作品を見るボタン（将来の拡張用） */}
-        {portfolioData.length > 0 && (
+        {/* すべて見るボタン */}
+        {portfolioData.length > 6 && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -77,13 +78,15 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-center mt-16"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl text-[#a1a1aa] hover:text-[#3b82f6] hover:border-[#3b82f6]/50 transition-all duration-300 font-medium"
-            >
-              もっと見る
-            </motion.button>
+            <Link href="/portfolio">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-[#3b82f6] to-[#1e40af] hover:from-[#2563eb] hover:to-[#1d4ed8] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                View all / すべて見る
+              </motion.button>
+            </Link>
           </motion.div>
         )}
       </div>
