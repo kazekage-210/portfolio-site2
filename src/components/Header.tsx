@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
@@ -40,22 +41,24 @@ const Header = () => {
             >
               Home
             </motion.button>
-            <motion.button
-              onClick={() => scrollToSection('member')}
-              className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Member
-            </motion.button>
-            <motion.button
-              onClick={() => scrollToSection('portfolio')}
-              className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Portfolio
-            </motion.button>
+            <Link href="/member">
+              <motion.button
+                className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Member
+              </motion.button>
+            </Link>
+            <Link href="/portfolio">
+              <motion.button
+                className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Portfolio
+              </motion.button>
+            </Link>
             <motion.button
               onClick={() => scrollToSection('contact')}
               className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
