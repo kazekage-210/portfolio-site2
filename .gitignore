@@ -2,8 +2,13 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.*
+
+# pnpm（将来使用するかもしれない場合に備えてコメントアウトで残す）
+# /.pnp
+# .pnp.*
+# .pnpm-debug.log*
+
+# yarn
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -28,7 +33,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
 .env*
