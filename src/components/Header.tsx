@@ -60,6 +60,15 @@ const Header = () => {
                          Portfolio
                        </motion.button>
                      </Link>
+                     <Link href="/planning">
+                       <motion.button
+                         className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+                         whileHover={{ scale: 1.02 }}
+                         whileTap={{ scale: 0.98 }}
+                       >
+                         Planning
+                       </motion.button>
+                     </Link>
                      <motion.button
                        onClick={() => scrollToSection('contact')}
                        className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
