@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { PROFILE } from '@/config/profile';
 import HeaderSocials from '@/app/components/HeaderSocials';
+import NonCommercialNote from './NonCommercialNote';
 
 const Hero = () => {
 
@@ -78,6 +79,9 @@ const Hero = () => {
             >
               <HeaderSocials />
             </motion.div>
+            
+            {/* 非商用デモ注意書き */}
+            <NonCommercialNote />
           </motion.div>
         </div>
       </div>

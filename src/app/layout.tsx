@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import SiteInfoRibbon from "@/components/SiteInfoRibbon";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,6 +18,7 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "匿名で作品を公開しています。デジタルの余白を紡ぎながら、静かに制作活動を続けています。",
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({
@@ -28,6 +30,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${inter.variable} ${notoSansJP.variable} font-sans antialiased`}>
         {children}
+        <SiteInfoRibbon />
       </body>
     </html>
   );
