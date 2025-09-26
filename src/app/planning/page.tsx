@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import PortfolioGrid from '@/components/PortfolioGrid';
 
-export default function PortfolioComingSoon() {
+export default function PlanningPage() {
   return (
     <div className="min-h-screen bg-[#0d0d0d] pt-24 md:pt-32">
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -22,42 +23,27 @@ export default function PortfolioComingSoon() {
           >
             <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[#3b82f6] to-[#1e40af] rounded-2xl flex items-center justify-center shadow-lg">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
               </svg>
             </div>
           </motion.div>
           
           <h1 className="text-4xl md:text-5xl font-light text-[#f5f5f5] mb-6 tracking-tight">
-            Portfolio
+            Plans
           </h1>
+          <p className="text-lg text-[#a1a1aa] max-w-2xl mx-auto leading-relaxed font-light">
+            企画一覧（構想/計画段階）
+          </p>
         </motion.div>
 
-        {/* 準備中メッセージ */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-2xl mx-auto"
-        >
-          <div className="rounded-2xl border border-gray-700/50 p-8 bg-gray-800/20 backdrop-blur-sm">
-            <p className="text-lg text-[#a1a1aa] mb-6 leading-relaxed">
-              このページは現在準備中です。
-            </p>
-            <p className="text-[#a1a1aa] leading-relaxed">
-              企画一覧は{" "}
-              <Link href="/planning" className="text-[#3b82f6] hover:text-[#60a5fa] underline transition-colors duration-300">
-                Planning ページ
-              </Link>{" "}
-              をご覧ください。
-            </p>
-          </div>
-        </motion.div>
+        {/* Portfolioグリッド */}
+        <PortfolioGrid />
 
         {/* 戻るリンク */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-16"
         >
           <Link href="/">
