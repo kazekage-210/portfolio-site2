@@ -51,6 +51,15 @@ const Header = () => {
                          Member
                        </motion.button>
                      </Link>
+                     <Link href="/labolog">
+                       <motion.button
+                         className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
+                         whileHover={{ scale: 1.02 }}
+                         whileTap={{ scale: 0.98 }}
+                       >
+                         Labolog
+                       </motion.button>
+                     </Link>
                      <Link href="/portfolio">
                        <motion.button
                          className="text-[#f5f5f5] hover:text-[#3b82f6] transition-colors duration-300"
